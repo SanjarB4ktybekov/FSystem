@@ -1,0 +1,24 @@
+@page "/AddEvent"
+@model AddScheduleForm
+@{
+
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">На этой странице вы можете добавить мероприятие в расписание</h1>
+
+    <form asp-page="AddFootballerFormModel">
+    <div class="form-group">
+        <label asp-for="_Schedule.EventName">Название мероприятия</label>
+        <input asp-for="_Schedule.EventName" class="form-control" placeholder="Введите название мероприятия">
+        <span asp-validation-for="_Schedule.EventName" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="_Schedule.EventDate">Введите дату</label>
+        <input asp-for="_Schedule.EventDate" class="form-control" placeholder="Введите дату">
+        <span asp-validation-for="_Schedule.EventDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+@page "/AddConsumption"
+@model AddConsumptionForm
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">На этой странице вы можете добавить запись расходов</h1>
+
+    <form asp-page="AddFootballForm">
+    <div class="form-group">
+        <label asp-for="Consumption.Reason">Направление</label>
+        <input asp-for="Consumption.Reason" class="form-control" placeholder="Введите направление">
+        <span asp-validation-for="Consumption.Reason" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Consumption.Sum">Сумма</label>
+        <input asp-for="Consumption.Sum" class="form-control" placeholder="Введите сумму">
+        <span asp-validation-for="Consumption.Sum" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+         <label asp-for="Consumption.DateOfOperation">Дата</label>
+        <input asp-for="Consumption.DateOfOperation" class="form-control" placeholder="Введите дату">
+        <span asp-validation-for="Consumption.DateOfOperation" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+</div>

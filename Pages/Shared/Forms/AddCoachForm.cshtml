@@ -1,0 +1,28 @@
+@page "/AddCoach"
+@model AddCoachFormModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">На этой странице вы можете добавить нового тренера</h1>
+
+    <form asp-page="AddCoachFormModel">
+    <div class="form-group">
+        <label asp-for="Coach.LastName">Фамилия</label>
+        <input asp-for="Coach.LastName" class="form-control" placeholder="Введите фамилию тренера">
+        <span asp-validation-for="Coach.LastName" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Coach.FirstName">Имя</label>
+        <input asp-for="Coach.FirstName" class="form-control" placeholder="Введите имя">
+        <span asp-validation-for="Coach.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-check">
+        <label asp-for="Coach.Salary">Зарплата</label>
+        <input asp-for="Coach.Salary" class="form-control" placeholder="Введите зарплату">
+        <span asp-validation-for="Coach.Salary" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+</div>

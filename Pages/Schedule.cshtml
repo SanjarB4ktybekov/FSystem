@@ -1,0 +1,35 @@
+﻿@page "/Schedule"
+@model ScheduleModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>Расписание</h1>
+    @if(Model._Shedule.Any())
+    {
+        <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Мероприятие</th>
+      <th scope="col">Дата</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in @Model._Shedule)
+      {
+        <tr>
+            <th scope="row">@item.ScheduleId</th>
+            <td>@item.EventName</td>
+            <td>@item.EventDate</td>
+        </tr>
+      }
+  </tbody>
+</table>
+    } else {
+        <div>Мероприятий пока не запланировано</div>
+    }
+
+    <a href="/Privacy"  type="button" class="btn btn-danger">Выход</a>
+</div>
